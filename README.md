@@ -1,24 +1,22 @@
-# Space Explorer App (Project 76)
+# Space Explorer — Project 76
 
-An Expo and React Native mobile app with a stack navigator for a home screen, star map, daily picture, and spacecraft screens.
+An Expo and React Native app organized around a four-screen space exploration flow. The root component wraps the app in a React Navigation container and registers Home, Star Map, Daily Picture, and Spacecraft screens.
+
+## Navigation and structure
+
+App.js defines the stack navigator and initial Home route. Screen components live under screens/, while assets/ stores app resources and app.json contains Expo configuration. The navigation header is hidden so each screen can provide its own design.
 
 ## Stack
 
-- React 16.13
-- React Native with Expo SDK 42
-- React Navigation 5 stack navigation
-- React Native Web
+React 16.13, React Native with Expo SDK 42, React Navigation 5, React Native Web, Gesture Handler, Reanimated, Screens, and Safe Area Context.
 
 ## Setup and run
 
-Install dependencies with `npm install`, then start Expo:
+    npm install
+    npm start
 
-```bash
-npm start
-```
+Use npm run android, npm run ios, or npm run web to choose a platform. A device or emulator is required for native targets.
 
-Run a target with `npm run android`, `npm run ios`, or `npm run web`. Native targets may require an emulator or device. Screen components live under `screens/`; the navigation container is configured in `App.js`.
+## Dependency note
 
-## Notes
-
-This repository includes both npm and Yarn lockfiles. Use one package manager consistently when installing dependencies.
+Both package-lock.json and yarn.lock are present. Choose one package manager and use its lockfile consistently when installing or updating dependencies.
