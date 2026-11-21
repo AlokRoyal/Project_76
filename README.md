@@ -1,22 +1,43 @@
 # Space Explorer — Project 76
 
-An Expo and React Native app organized around a four-screen space exploration flow. The root component wraps the app in a React Navigation container and registers Home, Star Map, Daily Picture, and Spacecraft screens.
+![React Native](https://img.shields.io/badge/React_Native-Expo-61DAFB?logo=react&logoColor=black)
+![Expo SDK](https://img.shields.io/badge/Expo-SDK%2042-000020?logo=expo&logoColor=white)
 
-## Navigation and structure
+An Expo and React Native app organized around a four-screen space exploration flow. The root component registers Home, Star Map, Daily Picture, and Spacecraft screens in a React Navigation stack.
 
-App.js defines the stack navigator and initial Home route. Screen components live under screens/, while assets/ stores app resources and app.json contains Expo configuration. The navigation header is hidden so each screen can provide its own design.
+## Features and structure
 
-## Stack
+- Stack navigation with Home as the initial route
+- Dedicated screen modules under screens/
+- Local application resources in assets/
+- Navigation header hidden so screens can control their own presentation
 
-React 16.13, React Native with Expo SDK 42, React Navigation 5, React Native Web, Gesture Handler, Reanimated, Screens, and Safe Area Context.
+App.js owns the NavigationContainer and route declarations. Screen content is kept outside the root component to make the app structure easier to extend.
 
-## Setup and run
+## Architecture
+
+Expo entry point → App.js → React Navigation container → screen component selected by route
+
+## Technology
+
+React 16.13, React Native with Expo SDK 42, React Navigation 5, React Native Web, Gesture Handler, Reanimated, Screens, Safe Area Context, and Babel. See package.json for pinned ranges.
+
+## Start locally
 
     npm install
     npm start
 
-Use npm run android, npm run ios, or npm run web to choose a platform. A device or emulator is required for native targets.
+Choose a target with npm run android, npm run ios, or npm run web. Android/iOS runs require a device or emulator. Expo Go compatibility depends on the installed SDK and device environment.
+
+## Project layout
+
+- App.js — navigation container and stack routes
+- screens/ — Home, StarMap, DailyPic, and SpaceCraft screen components
+- assets/ — app resources
+- app.json — Expo application configuration
+- package.json — scripts and dependencies
+- package-lock.json and yarn.lock — npm and Yarn lockfiles
 
 ## Dependency note
 
-Both package-lock.json and yarn.lock are present. Choose one package manager and use its lockfile consistently when installing or updating dependencies.
+Both npm and Yarn lockfiles are checked in. Choose one package manager and keep its lockfile authoritative. No automated test scripts are listed.
